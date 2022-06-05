@@ -1,0 +1,26 @@
+#include <bits/stdc++.h> 
+vector<int> nextPermutation(vector<int> &a, int n)
+{
+     int f,s;
+        int i;
+        for(i=n-2;i>=0;i--){
+            if(a[i]<a[i+1]){
+                f= i;
+                break;
+            }
+        }
+        if(i<0){
+            reverse(a.begin(),a.end());
+        }
+        else{
+            for(int i=n-1;i>=0;i--){
+                if(a[i]>a[f]){
+                    s=i;
+                    break;
+                }
+            }
+            swap(a[f],a[s]);
+            reverse(a.begin()+f+1,a.end());
+        }
+    return a;
+}
