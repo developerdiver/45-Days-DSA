@@ -1,0 +1,11 @@
+class Solution {
+public:
+    void merge(vector<int>& a, int m, vector<int>& b, int n) {
+        int i; 
+        a.resize(m);
+        for(i=0; i<n; i++){
+            a.push_back(b[i]);
+        }
+        sort(a.begin(), a.end());
+    }
+};
